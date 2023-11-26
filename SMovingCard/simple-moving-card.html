@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML/CSS my AppCubic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        body{
+            background-color: #4F6F52;
+            display: flex;
+            justify-content: center;
+        }
+        .a{
+            position: relative;
+            width: 700px;
+            height: 400px;
+            border: #fff 10px solid;
+            background-color: #3A4D39;
+            top: 120px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .b{
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            left: 0;
+            margin: 75px 50px;
+            transition: 1s;
+        }
+        .b a{
+            text-decoration: none;
+            color: #fff;
+            font: 900 28px 'Sofia';
+        }
+        .b h2{
+            /* When mouse is moved away
+            then delay +1s */
+            transition: .5s 1s;
+            opacity: 0;
+            color: rgb(239, 224, 237);
+            font: 700 20px 'Sofia';
+        }
+        .b span{
+            transition: .5s 1s;
+            color: #fff;
+            font: 500 18px 'Crimson Pro';
+            position: absolute;
+            top: 70px;
+        }
+        .c{
+            position: absolute;
+            top: -130px;
+            right: -240px;
+        }
+        .d,.e{
+            position: absolute;
+            right: calc(var(--i)*100px);
+            width: calc(var(--w)*40px);
+            height: 500px;
+            overflow: hidden;
+            border-radius: 100px;
+            transform: rotateZ(220deg) translate(0,0);
+            background: rgb(240,220,150);
+            transition: .5s .5s;
+        }
+        .d:nth-child(2){
+            background: rgb(240,190,230);
+        }
+        .e{
+            left: -470px;
+            top: -140px;
+            width: 70px;
+            background-color: rgb(90,220,150);
+        }
+        .a:hover .c div{
+            /* delay */
+            transition: .5s calc(var(--i)*.1s);
+            /* route */
+            transform: rotateZ(220deg) translate(-200px,400px);
+        }
+        .a:hover .b{
+            transition: 1s .5s;
+            left: 370px;
+        }
+        .a:hover .b span{
+            transition: 1s .5s;
+            top: 105px;
+        }
+        .a:hover .b h2{
+            transition: 1s .5s;
+            opacity: 1;
+        }
+        .f{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            background-image: url("goat.png");
+            background-size: cover;
+            margin: 70px;
+            opacity: 0;
+            transition: .5s;
+        }
+        .a:hover .f{
+            transition: 1s 1.3s;
+            opacity: 1;
+        }
+        h2{
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <!-- Three big blocks
+    Outmost -> a
+    Word Block -> b 
+    Flat Cylinder -> c -->
+    <div class="a">
+        <div class="b">
+            <a href="#">Benji Peng</a>
+            <h2><i class="fa-brands fa-linkedin"></i>:@benjiph</h2>
+            <span>I'm a front-end developer enthusiast,</br>I'm learning new knowledge every day to share with you,<br/>I hope in the days to come<br/>Keep going!!</span>
+        </div>
+        <div class="c">
+            <!-- --i for delay and distance
+            --w is for width -->
+            <div class="d" style="--i:1;--w:1.5"></div>
+            <div class="d" style="--i:2;--w:1.6"></div>
+            <div class="d" style="--i:3;--w:1.4"></div>
+            <div class="d" style="--i:4;--w:1.7"></div>
+            <div class="e" style="--i:1"></div>
+        </div>
+        <!-- QR code -->
+        <div class="f"></div>
+    </div>
+</body>
+</html>
